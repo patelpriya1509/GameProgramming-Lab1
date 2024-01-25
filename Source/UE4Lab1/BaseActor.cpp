@@ -6,9 +6,14 @@
 // Sets default values
 ABaseActor::ABaseActor()
 {
- 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
+	RootTransformComponent = CreateDefaultSubobject<USceneComponent>("Actor Root");
+	SetRootComponent(RootTransformComponent);
+
+	Mesh = CreateDefaultSubobject<UStaticMeshComponent>("Actor Mesh");
+	Mesh->SetupAttachment(RootComponent);
 }
 
 // Called when the game starts or when spawned
