@@ -50,10 +50,10 @@ void AMovingActor::Tick(float DeltaTime)
 		NewLookAt.Yaw += -180.0f;
 		NewLookAt.Roll = 0.0f;
 
-		FQuat slerpedRotation = FMath::Lerp(FQuat(GetActorRotation()), FQuat(NewLookAt), 0.08f);
+		FQuat slerpedRotation = FMath::Lerp(FQuat(GetActorRotation()), FQuat(NewLookAt), 0.1f);
 		SetActorRotation(slerpedRotation);
 
-		FVector lerp2 = FMath::VInterpConstantTo(GetActorLocation(), CurrentPoint->GetActorLocation(), DeltaTime, 600.f);
+		FVector lerp2 = FMath::VInterpConstantTo(GetActorLocation(), CurrentPoint->GetActorLocation(), DeltaTime, 500.f);
 		SetActorLocation(lerp2);
 	}
 }

@@ -32,12 +32,11 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "RotateAround", meta = (ClampMin = "0.0", ClampMax = "360.0", UMin = "0.0", UIMax = "360.0"))
 	float InitialRotationAngle = 0.f;
 
-	float CurrentAngle = 0.f;
-
 	virtual void Tick(float DeltaTime) override;
 
 protected:
 	virtual void BeginPlay() override;
+	float CurrentAngle = 0.f;
 
 public:
 	void Reset();

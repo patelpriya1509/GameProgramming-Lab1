@@ -7,6 +7,7 @@
 AOrbitActor::AOrbitActor()
 {
 	PrimaryActorTick.bCanEverTick = true;
+
 }
 
 void AOrbitActor::BeginPlay()

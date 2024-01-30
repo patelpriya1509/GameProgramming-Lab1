@@ -29,7 +29,7 @@ protected:
 	virtual void BeginPlay() override;
 
 private:
-	AActor* CurrentPoint;
+	class AActor* CurrentPoint;
 
 	void MoveToNextPoint();
 };
